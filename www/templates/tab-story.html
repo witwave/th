@@ -1,0 +1,15 @@
+<ion-view title="幸福墙">
+<ion-content>
+<ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()">
+</ion-refresher>
+<div class="list">
+    <a ng-repeat="item in items" class="item  item-avatar item-text-wrap">
+    <img src="http://369336699.com/{{item.showPic}}"/>
+    <h2 ng-bind="item.title"></h2>
+    <p ng-bind-template="{{item.couple.m.nickname}} &&{{item.couple.f.nickname}}"></p>
+    </a>
+</div>
+<ion-infinite-scroll on-infinite="loadMore()" distance="1%" ng-if="hasNextPage">
+</ion-infinite-scroll>
+</ion-content>
+</ion-view>

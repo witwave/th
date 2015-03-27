@@ -1,0 +1,16 @@
+<ion-view title="天合婚恋">
+<ion-content >
+<ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()">
+</ion-refresher>
+<div class="list">
+    <a ng-repeat="item in items" class="item  item-text-wrap">
+    <h4 ng-bind="item.profile.comment.title"></h4>
+    <p ng-bind-html="item.profile.comment.content"></p>
+    </a>
+</div>
+  <ion-infinite-scroll
+    on-infinite="loadMore()"
+    distance="1%" ng-if="hasNextPage">
+  </ion-infinite-scroll>
+</ion-content>
+</ion-view>
